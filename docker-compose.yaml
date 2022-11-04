@@ -1,0 +1,17 @@
+version: "3.2"
+
+networks:
+  default:
+    external:
+      name: common
+
+services:
+  blog_db:
+    image: postgres:14-alpine
+    environment:
+      POSTGRES_PASSWORD: rust123
+      POSTGRES_USER: rust
+      POSTGRES_DB: rust
+      POSTGRES_HOST_AUTH_METHOD: trust
+    ports:
+      - "5433:5432"
